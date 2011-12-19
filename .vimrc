@@ -1,9 +1,7 @@
 " must be first, changes behaviour of other settings
 set nocompatible
 
-" solarized color theme
-set background=light
-colorscheme solarized
+colorscheme darkblue
 
 " sane text files
 set fileformat=unix
@@ -19,7 +17,6 @@ set expandtab
 
 " syntax highlighting
 syntax on
-color koehler
 
 "make sure highlighting works all the way down long files
 autocmd BufEnter * :syntax sync fromstart
