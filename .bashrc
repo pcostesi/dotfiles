@@ -55,9 +55,15 @@ fi
 # load other files, like functions, colors and prompt
 if [ -d ~/.bashrc.d ]; then
     for file in ~/.bashrc.d/*; do
-            . "$file";
+            source "$file";
     done
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH=$PATH:$HOME/arc/arcanist/bin/
+export EDITOR=$(which vim)
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
