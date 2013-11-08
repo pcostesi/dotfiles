@@ -25,17 +25,22 @@ done
 
 git submodule update --init
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle; \
-curl -Sso ~/.vim/autoload/pathogen.vim \
-    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-
 sudo apt-get install dconf-cli ipython vim git-core
 sudo apt-get install ttf-inconsolata
 bash gnome-terminal-colors-solarized/install.sh
 
-mkdir -p ~/.fonts ~/.fonts.conf.d
+python .vim/bundle/powerline/setup.py install --user
+
+mkdir -p ~/.fonts
+mkdir -p ~/.config/fontconfig/conf.d/
 cp .vim/bundle/powerline/font/*.otf ~/.fonts/
-cp .vim/bundle/powerline/font/*.conf ~/.fonts.conf.d/
+cp .vim/bundle/powerline/font/*.conf ~/.config/fontconfig/conf.d/
 fc-cache -vf ~/.fonts
 
-cd vim/csv.vim/make && make ; cd -
+cd vim/csv.vim/ && make ; cd -
+
+mkdir -p ~/.solarized/dircolors
+cp dircolors-solarized/dircolors.256dark ~/.solarized/dircolors/
+
+mkdir -p ~/.tmux.d/
+cp .vim/bundle/powerline/powerline/bindings/tmux/powerline.conf ~/.tmux.d/

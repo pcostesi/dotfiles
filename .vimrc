@@ -1,13 +1,20 @@
 " must be first, changes behaviour of other settings
 set nocompatible
 
+set encoding=utf-8
 execute pathogen#infect()
 
 :filetype plugin on
 
-" colorscheme solarized
+let g:Powerline_symbols = 'fancy'
 
 filetype plugin indent on
+
+
+set t_Co=256 " force vim to use 256 colors
+let g:solarized_termcolors=16 " use solarized 256 fallback
+set background=dark
+colorscheme solarized
 
 " sane text files
 set fileformat=unix
@@ -139,3 +146,7 @@ inoremap <c-s-space> <c-p>
 
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 execute pathogen#infect("~/.vim/bundle/powerline/powerline/bindings/vim/{}")
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
