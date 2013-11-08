@@ -1,7 +1,13 @@
 " must be first, changes behaviour of other settings
 set nocompatible
 
-colorscheme darkblue
+execute pathogen#infect()
+
+:filetype plugin on
+
+" colorscheme solarized
+
+filetype plugin indent on
 
 " sane text files
 set fileformat=unix
@@ -99,7 +105,7 @@ if has("autocmd")
     " 'cindent' is on in C files, etc.
     " Also load indent files, to automatically do language-dependent indenting.
     filetype plugin indent on
-    
+
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
     " (happens when dropping a file on gvim).
@@ -131,73 +137,5 @@ set tags+=tags;/
 inoremap <c-space> <c-n>
 inoremap <c-s-space> <c-p>
 
-
-" =====STATUS LINE OF DEATH!!=====
-set statusline=
-" filename, relative to cwd
-set statusline+=%f
-" separator
-set statusline+=\ 
-
-" modified flag
-set statusline+=%#wildmenu#
-set statusline+=%m
-set statusline+=%*
-
-"Display a warning if file encoding isnt utf-8
-set statusline+=%#question#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
-
-"display a warning if fileformat isnt unix
-set statusline+=%#directory#
-set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-set statusline+=%*
-
-"display a warning if files contains tab chars
-set statusline+=%#warningmsg#
-set statusline+=%{StatuslineTabWarning()}
-set statusline+=%*
-
-" read-only
-set statusline+=%r
-set statusline+=%*
-
-" right-align
-set statusline+=%=
-
-" filetype
-set statusline+=%{strlen(&ft)?&ft:'none'}
-" separator
-set statusline+=\ 
-
-" current char
-set statusline+=%3b,0x%02B
-" separator
-set statusline+=\ 
-
-" column,
-set statusline+=%2c,
-" current line / lines in file
-set statusline+=%l/%L
-
-" always show status line
-set laststatus=2
-
-" return '[tabs]' if tab chars in file, or empty string
-function! StatuslineTabWarning()
-    if !exists("b:statusline_tab_warning")
-        let tabs = search('^\t', 'nw') != 0
-
-        if tabs
-            let b:statusline_tab_warning = '[tabs]'
-        else
-            let b:statusline_tab_warning = ''
-        endif
-    endif
-    return b:statusline_tab_warning
-endfunction
-"recalculate the tab warning flag when idle and after writing
-autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
-
-
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+execute pathogen#infect("~/.vim/bundle/powerline/powerline/bindings/vim/{}")

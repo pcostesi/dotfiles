@@ -1,0 +1,18 @@
+[submodule "gnome-terminal-colors-solarized"]
+	path = gnome-terminal-colors-solarized
+	url = http://github.com/sigurdga/gnome-terminal-colors-solarized.git
+[submodule ".vim/bundle/vim-colors-solarized"]
+	path = .vim/bundle/vim-colors-solarized
+	url = http://github.com/altercation/vim-colors-solarized.git
+[submodule ".vim/bundle/powerline"]
+	path = .vim/bundle/powerline
+	url = http://github.com/Lokaltog/powerline.git
+[submodule "vim/csv.vim"]
+	path = vim/csv.vim
+	url = http://github.com/chrisbra/csv.vim.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/vim-gitgutter"]
+	path = .vim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
