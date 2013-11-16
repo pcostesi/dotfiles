@@ -147,6 +147,3 @@ inoremap <c-s-space> <c-p>
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 execute pathogen#infect("~/.vim/bundle/powerline/powerline/bindings/vim/{}")
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
