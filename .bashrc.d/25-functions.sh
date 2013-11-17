@@ -5,7 +5,8 @@ function parse_git_branch {
 
 
 function parse_core_temp {
-    sensors | grep temp1 | grep -o "[0-9\.]*°C" | head -n1
+    VAR=$(/opt/vc/bin/vcgencmd measure_temp | grep -o "[0-9.]*")
+    echo "∆ $VAR°C"
 }
 
 
