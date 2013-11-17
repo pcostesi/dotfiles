@@ -5,8 +5,9 @@ for file in .*; do
     base=$(basename $file)
     replaces="$HOME/$base"
 
-    # avoid existing symlinks
+    # back-up existing symlinks
     if [[ -L $replaces ]]; then
+        cp $replaces $replaces-old
         continue;
     fi
     for avoid in "." ".." ".git"; do

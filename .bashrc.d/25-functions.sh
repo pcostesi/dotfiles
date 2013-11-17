@@ -4,6 +4,11 @@ function parse_git_branch {
 }
 
 
+function parse_core_temp {
+    sensors | grep temp1 | grep -o "[0-9\.]*°C" | head -n1
+}
+
+
 function get_ret_code {
   _ret=$?; 
   if test $_ret -ne 0; then
