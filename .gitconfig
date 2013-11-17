@@ -21,10 +21,6 @@
     wdiff = diff --color-words
 
 
-[user]
-    name = Pablo Costesich
-	email = pcostesich@monits.com
-
 [merge]
 	conflictstyle = diff3
     log = true
@@ -32,4 +28,4 @@
 [rerere]
 	enabled = true
 [push]
-	default = simple
+	default = tracking
