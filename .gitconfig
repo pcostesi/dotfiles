@@ -31,3 +31,5 @@
 
 [rerere]
 	enabled = true
+[push]
+	default = simple
