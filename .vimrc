@@ -144,6 +144,8 @@ set tags+=tags;/
 inoremap <c-space> <c-n>
 inoremap <c-s-space> <c-p>
 
+set laststatus=2
+
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 execute pathogen#infect("~/.vim/bundle/powerline/powerline/bindings/vim/{}")
 
