@@ -164,3 +164,7 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_auto_jump=1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers=['pylint']
+
+let g:gitgutter_signs=1
+" let g:gitgutter_highlight_lines = 1
+set updatetime=750
