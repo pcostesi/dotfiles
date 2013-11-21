@@ -4,7 +4,7 @@ set nocompatible
 set encoding=utf-8
 execute pathogen#infect()
 
-:filetype plugin on
+filetype plugin on
 
 let g:Powerline_symbols = 'fancy'
 
@@ -152,3 +152,15 @@ execute pathogen#infect("~/.vim/bundle/powerline/powerline/bindings/vim/{}")
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
+
+let &winheight = &lines * 7 / 10
+let &winwidth = &columns * 6 / 10
+let &winminwidth = 80
+
+let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_jump=1
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_python_checkers=['pylint']
