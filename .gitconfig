@@ -19,6 +19,7 @@
     stat = status
     br = branch
     wdiff = diff --color-words
+	d = difftool
 
 [merge]
 	conflictstyle = diff3
@@ -28,3 +29,7 @@
 	enabled = true
 [push]
 	default = tracking
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
