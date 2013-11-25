@@ -1,15 +1,15 @@
 [submodule "gnome-terminal-colors-solarized"]
 	path = gnome-terminal-colors-solarized
-	url = http://github.com/sigurdga/gnome-terminal-colors-solarized.git
+	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
-	url = http://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/powerline"]
 	path = .vim/bundle/powerline
-	url = http://github.com/Lokaltog/powerline.git
+	url = https://github.com/Lokaltog/powerline.git
 [submodule "vim/csv.vim"]
 	path = vim/csv.vim
-	url = http://github.com/chrisbra/csv.vim.git
+	url = https://github.com/chrisbra/csv.vim.git
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -24,7 +24,7 @@
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/ack-vim"]
 	path = .vim/bundle/ack-vim
 	url = https://github.com/mileszs/ack.vim.git
