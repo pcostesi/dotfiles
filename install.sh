@@ -8,7 +8,6 @@ for file in .*; do
     # back-up existing symlinks
     if [[ -L $replaces ]]; then
         cp $replaces $replaces-old
-        continue;
     fi
     for avoid in "." ".." ".git"; do
         if [[ $base = $avoid ]]; then
@@ -20,7 +19,7 @@ for file in .*; do
     fi
 
     repo=$(pwd)
-	ln -bs "$repo/$file" "$replaces"
+    ln -bs "$repo/$file" "$replaces"
     echo "Installing $file"
 done
 

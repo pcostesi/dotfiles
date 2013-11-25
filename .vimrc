@@ -4,12 +4,7 @@ set nocompatible
 set encoding=utf-8
 execute pathogen#infect()
 
-filetype plugin on
-
 let g:Powerline_symbols = 'fancy'
-
-filetype plugin indent on
-
 
 set t_Co=256 " force vim to use 256 colors
 let g:solarized_termcolors=16 " use solarized 256 fallback
@@ -21,7 +16,7 @@ set fileformat=unix
 set encoding=utf-8
 
 " sane tabs
-set tabstop=4
+set tabstop=8
 set shiftwidth=4
 set softtabstop=4
 
@@ -106,6 +101,8 @@ filetype plugin on
 " enables filetype detection
 filetype on
 
+filetype plugin indent on
+
 if has("autocmd")
     " Enable file type detection.
     " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -144,6 +141,7 @@ set tags+=tags;/
 inoremap <c-space> <c-n>
 inoremap <c-s-space> <c-p>
 
+" always show statusbar
 set laststatus=2
 
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
@@ -153,6 +151,8 @@ python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
 
+
+" autorezise windows
 let &winheight = &lines * 7 / 10
 let &winwidth = &columns * 6 / 10
 let &winminwidth = 80
@@ -160,11 +160,26 @@ let &winminwidth = 80
 let g:syntastic_javascript_checkers = ['jslint']
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_auto_jump=1
+" let g:syntastic_auto_loc_list=1
+" let g:syntastic_auto_jump=1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers=['pylint']
 
 let g:gitgutter_signs=1
 " let g:gitgutter_highlight_lines = 1
 set updatetime=750
+
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <C-n> :NERDTreeToggle<CR>
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+
+set colorcolumn=72,79,100
+
+" highlight excess lines
+highlight OverLength79 ctermbg=0 ctermfg=1
+highlight OverLength100 ctermbg=1 ctermfg=0
+
+mat OverLength79 /\%79v.*/
+2mat OverLength100 /\%100v.*/
