@@ -5,7 +5,7 @@ function parse_git_branch {
 
 
 function parse_core_temp {
-    VAR=$(sensors | grep CPU | grep -o "[0-9\.]*°C" | head -n1)
+    VAR=$(sensors | grep temp1 | grep -o "[0-9\.]*°C" | head -n1)
     echo "∆ $VAR"
 }
 

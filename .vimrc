@@ -160,11 +160,15 @@ let &winminwidth = 80
 let g:syntastic_javascript_checkers = ['jslint']
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_auto_jump=1
+" let g:syntastic_auto_loc_list=1
+" let g:syntastic_auto_jump=1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers=['pylint']
 
 let g:gitgutter_signs=1
 " let g:gitgutter_highlight_lines = 1
 set updatetime=750
+
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <C-n> :NERDTreeToggle<CR>
