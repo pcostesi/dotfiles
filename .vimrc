@@ -70,6 +70,9 @@ set hlsearch
 " map key to dismiss search highlightedness
 map <bs> :noh<CR>
 
+" map leader to a less RSI-prone shortcut
+let mapleader = ","
+
 " grep for word under cursor
 noremap <Leader>g :grep -rw '<C-r><C-w>' .<CR>
 
@@ -183,3 +186,13 @@ highlight OverLength100 ctermbg=1 ctermfg=11
 
 mat OverLength79 /\%80v.*/
 2mat OverLength100 /\%101v.*/
+
+au FileType * IndentGuidesDisable
+au FileType python IndentGuidesEnable
+
+" let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+hi IndentGuidesOdd ctermbg=0
+hi IndentGuidesEven ctermbg=0
