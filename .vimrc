@@ -169,8 +169,8 @@ let g:gitgutter_signs=1
 " let g:gitgutter_highlight_lines = 1
 set updatetime=750
 
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd vimenter * if !argc() | NERDTree | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -179,7 +179,7 @@ set colorcolumn=72,79,100
 
 " highlight excess lines
 highlight OverLength79 ctermbg=0 ctermfg=1
-highlight OverLength100 ctermbg=1 ctermfg=0
+highlight OverLength100 ctermbg=1 ctermfg=11
 
-mat OverLength79 /\%79v.*/
-2mat OverLength100 /\%100v.*/
+mat OverLength79 /\%80v.*/
+2mat OverLength100 /\%101v.*/
