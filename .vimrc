@@ -157,8 +157,9 @@ python del powerline_setup
 
 " autorezise windows
 let &winheight = &lines * 7 / 10
-let &winwidth = &columns * 6 / 10
-let &winminwidth = 80
+let &winwidth = &columns * 7 / 10
+let &winminwidth = 5
+map <C-w><C-w> <C-w>w<C-w>=
 
 let g:syntastic_javascript_checkers = ['jslint']
 let g:syntastic_check_on_open=1
