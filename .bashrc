@@ -73,3 +73,4 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 
 export TERM="screen-256color"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

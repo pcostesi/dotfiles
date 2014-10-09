@@ -127,6 +127,8 @@ if has("autocmd")
     " 'cindent' is on in C files, etc.
     " Also load indent files, to automatically do language-dependent indenting.
     filetype plugin indent on
+    
+    autocmd Filetype javascript setlocal ts=2 sw=2 sts=2
 
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
@@ -190,10 +192,10 @@ set colorcolumn=72,79,100
 
 " highlight excess lines
 highlight OverLength79 ctermbg=0 ctermfg=1
-highlight OverLength100 ctermbg=1 ctermfg=11
+" highlight OverLength100 ctermbg=1 ctermfg=11
 
 mat OverLength79 /\%80v.*/
-2mat OverLength100 /\%101v.*/
+" 2mat OverLength100 /\%101v.*/
 
 au FileType * IndentGuidesDisable
 au FileType python IndentGuidesEnable

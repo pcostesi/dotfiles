@@ -26,7 +26,7 @@
     log = true
 
 [rerere]
-	enabled = true
+	enabled = false
 
 [push]
 	default = tracking
