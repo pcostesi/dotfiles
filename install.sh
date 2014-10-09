@@ -31,7 +31,10 @@ for file in .*; do
     echo "Installing $file"
 done
 
-git submodule update --init
+# git submodule update --init
+# no longer needed
+
+git clone "https://github.com/gmarik/Vundle.vim.git" "$HOME/.vim/bundle/Vundle.vim"
 
 sudo apt-get install dconf-cli ipython vim git-core
 sudo apt-get install ttf-inconsolata
@@ -56,3 +59,5 @@ cp dircolors-solarized/dircolors.ansi-dark ~/.solarized/dircolors/
 
 mkdir -p ~/.tmux.d/
 cp .vim/bundle/powerline/powerline/bindings/tmux/powerline.conf ~/.tmux.d/
+
+vim +BundleInstall +qall

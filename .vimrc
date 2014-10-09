@@ -1,15 +1,5 @@
 " must be first, changes behaviour of other settings
-set nocompatible
-
-set encoding=utf-8
-execute pathogen#infect()
-
-let g:Powerline_symbols = 'fancy'
-
-set t_Co=256 " force vim to use 256 colors
-let g:solarized_termcolors=16 " use solarized 256 fallback
-set background=dark
-colorscheme solarized
+set nocompatible              " be iMproved, required
 
 " sane text files
 set fileformat=unix
@@ -22,6 +12,31 @@ set softtabstop=4
 
 " convert all typed tabs to spaces
 set expandtab
+
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+source ~/.vim/vundle-imports.vim
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+set encoding=utf-8
+
+let g:Powerline_symbols = 'fancy'
+
+set t_Co=256 " force vim to use 256 colors
+let g:solarized_termcolors=16 " use solarized 256 fallback
+set background=dark
+colorscheme solarized
 
 " syntax highlighting
 syntax on
@@ -147,21 +162,13 @@ inoremap <c-s-space> <c-p>
 " always show statusbar
 set laststatus=2
 
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-execute pathogen#infect("~/.vim/bundle/powerline/powerline/bindings/vim/{}")
-
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-
-
 " autorezise windows
 let &winheight = &lines * 7 / 10
 let &winwidth = &columns * 7 / 10
 let &winminwidth = 5
 map <C-w><C-w> <C-w>w<C-w>=
 
-let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_javascript_checkers = ['jslint', 'eslint']
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 " let g:syntastic_auto_loc_list=1
