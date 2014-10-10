@@ -1,6 +1,6 @@
 # Show current git branch in prompt.
 function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
 
@@ -30,3 +30,21 @@ function get_ret_code {
     unset _ret; 
   fi
 }
+
+
+function find_tag {
+    # 4) sort by dev, RC 
+    # 3) sort by revision
+    # 2) sort by minor
+    # 1) sort by major
+    # all sorts are stable, and in reverse order so they stack up.
+    local version=$(git tag \
+            | sort -drs -t'-' -k2,2     \
+            | sort -nrs -t'.' -k3,3     \
+            | sort -nrs -t'.' -k2,2     \
+            | sort -nrs -t'.' -k1,1     \
+            | grep -E "$1" -m 1         \
+            || echo "N/A");
+    echo "($(parse_git_branch) «$version»)"
+}
+
