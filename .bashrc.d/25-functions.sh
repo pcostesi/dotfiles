@@ -32,19 +32,50 @@ function get_ret_code {
 }
 
 
+function upsearch {
+    the_test=$1
+    up_to=$2
+    curdir=$(pwd)
+    result=1
+
+    while [[ "$(pwd)" != "$up_to" && "$(pwd)" != '/' ]]; do
+        if eval "[[ $the_test ]]"; then
+            result=0
+            break
+        fi
+        cd ..
+    done
+    cd $curdir
+    return $result
+}
+
+if upsearch '-e Gemfile || ! -z "$(shopt -s nullglob; echo *.gemspec *.rb)"' ; then
+    ~/.rvm/bin/rvm-prompt
+fi
+
+
 function find_tag {
+    local branch="$(parse_git_branch)";
+
+    if test -z $branch; then
+        return;
+    fi
+    if ! upsearch '-e bump-version'; then
+        echo "($branch)";
+        return;
+    fi
     # 4) sort by dev, RC 
     # 3) sort by revision
     # 2) sort by minor
     # 1) sort by major
     # all sorts are stable, and in reverse order so they stack up.
-    local version=$(git tag \
+    local version=$(git tag 2> /dev/null \
             | sort -drs -t'-' -k2,2     \
             | sort -nrs -t'.' -k3,3     \
             | sort -nrs -t'.' -k2,2     \
             | sort -nrs -t'.' -k1,1     \
             | grep -E "$1" -m 1         \
             || echo "N/A");
-    echo "($(parse_git_branch) «$version»)"
+    echo "($branch) «$version»)"
 }
 
