@@ -74,3 +74,6 @@ fi
 
 export TERM="screen-256color"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export PATH=$PATH:$HOME/arc/arcanist/bin/
+export PATH=$PATH:$HOME/arc/arcanist/bin/
+export PATH=$PATH:$HOME/arc/arcanist/bin/

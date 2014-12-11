@@ -10,3 +10,5 @@ Plugin 'git@github.com:nathanaelkane/vim-indent-guides.git'
 Plugin 'git@github.com:chrisbra/csv.vim.git'
 Plugin 'JulesWang/css.vim'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'esneider/YUNOcommit.vim'
+
