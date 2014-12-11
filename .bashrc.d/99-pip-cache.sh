@@ -1,0 +1,3 @@
+#!/bin/bash
+
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
