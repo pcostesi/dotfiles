@@ -32,6 +32,10 @@ filetype plugin indent on    " required
 set encoding=utf-8
 
 let g:Powerline_symbols = 'fancy'
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 
 set t_Co=256 " force vim to use 256 colors
 let g:solarized_termcolors=16 " use solarized 256 fallback
@@ -136,6 +140,7 @@ if has("autocmd")
     \   exe "normal g`\"" |
     \ endif
 
+    autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 else
     " if old vim, set vanilla autoindenting on
     set autoindent
