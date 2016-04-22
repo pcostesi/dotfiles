@@ -1,42 +1,9 @@
 [submodule "gnome-terminal-colors-solarized"]
 	path = gnome-terminal-colors-solarized
 	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/powerline"]
-	path = .vim/bundle/powerline
-	url = https://github.com/Lokaltog/powerline.git
 [submodule "vim/csv.vim"]
 	path = vim/csv.vim
 	url = https://github.com/chrisbra/csv.vim.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule ".vim/bundle/vim-gitgutter"]
-	path = .vim/bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/ack-vim"]
-	path = .vim/bundle/ack-vim
-	url = https://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/vim-indent-guides"]
-	path = .vim/bundle/vim-indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
-[submodule ".vim/bundle/surround"]
-	path = .vim/bundle/surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/cmd-t"]
-	path = .vim/bundle/cmd-t
-	url = https://github.com/wincent/Command-T.git
-[submodule ".vim/bundle/scss-syntax"]
-	path = .vim/bundle/scss-syntax
-	url = git@github.com:cakebaker/scss-syntax.vim.git
