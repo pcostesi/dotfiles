@@ -1,5 +1,9 @@
 " must be first, changes behaviour of other settings
 set nocompatible              " be iMproved, required
+set regexpengine=1
+
+set list
+
 
 " sane text files
 set fileformat=unix
@@ -68,7 +72,7 @@ set backspace=indent,eol,start
 set nowrap
 
 " line numbers
-set number
+set relativenumber
 
 " when joining lines, don't insert two spaces after punctuation
 set nojoinspaces
@@ -165,6 +169,14 @@ set tags+=tags;/
 inoremap <c-space> <c-n>
 inoremap <c-s-space> <c-p>
 
+" More useful command-line completion
+set wildmenu
+
+"Auto-completion menu
+set wildmode=list:longest
+
+
+
 " always show statusbar
 set laststatus=2
 
@@ -192,6 +204,13 @@ set updatetime=750
 map <C-n> :NERDTreeToggle<CR>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+"Show hidden files in NerdTree
+let NERDTreeShowHidden=1
+"
+"autopen NERDTree and focus cursor in new document
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
+
 
 set colorcolumn=72,79,100
 
@@ -211,3 +230,56 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 hi IndentGuidesOdd ctermbg=0
 hi IndentGuidesEven ctermbg=0
+
+
+
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+
+nnoremap <C-m> :call NumberToggle()<cr>
+
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+" Source the vimrc file after saving it. This way, you don't have to reload Vim to see the changes.
+if has("autocmd")
+ augroup myvimrchooks
+  au!
+  autocmd bufwritepost .vimrc source ~/.vimrc
+ augroup END
+endif
+
+" Auto-install plugins when saved
+if has("autocmd")
+ augroup mypluginhooks
+  au!
+  autocmd bufwritepost vundle-imports.vim PluginInstall
+ augroup END
+endif
+
+
+" General conceal settings. Will keep things concealed
+" even when your cursor is on top of them.
+set conceallevel=1
+set concealcursor=nvic
+
+" vim-javascript conceal settings.
+let g:javascript_conceal_NaN            = "ℕ"
+let g:javascript_conceal_arrow_function = "λ"
+let g:javascript_conceal_function       = "ƒ"
+let g:javascript_conceal_null           = "ø"
+let g:javascript_conceal_prototype      = "¶"
+let g:javascript_conceal_return         = "⇚"
+let g:javascript_conceal_static         = "•"
+let g:javascript_conceal_super          = "Ω"
+let g:javascript_conceal_this           = "@"
+let g:javascript_conceal_undefined      = "¿"
+
+let b:javascript_fold                   = 1
+let javascript_enable_domhtmlcss        = 1
