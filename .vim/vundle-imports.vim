@@ -18,3 +18,5 @@ Plugin 'othree/html5.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'calebsmith/vim-lambdify'
 Plugin 'ternjs/tern_for_vim', {'do': 'npm install'}
+Plugin 'ctrlpvim/ctrlp.vim'
+

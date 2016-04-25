@@ -283,3 +283,7 @@ let g:javascript_conceal_undefined      = "¿"
 
 let b:javascript_fold                   = 1
 let javascript_enable_domhtmlcss        = 1
+
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
