@@ -72,6 +72,7 @@ set backspace=indent,eol,start
 set nowrap
 
 " line numbers
+set relativenumber
 set number
 
 " when joining lines, don't insert two spaces after punctuation
@@ -173,18 +174,26 @@ let &winwidth = &columns * 7 / 10
 let &winminwidth = 5
 map <C-w><C-w> <C-w>w<C-w>=
 
-let g:syntastic_javascript_checkers = ['jslint', 'eslint']
+" Syntastic
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
-" let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_wq = 1
 " let g:syntastic_auto_jump=1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers=['pylint']
 
+" Ctrl P
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Git Gutter
 let g:gitgutter_signs=1
 " let g:gitgutter_highlight_lines = 1
 set updatetime=750
 
+" Nerd Tree
 " autocmd vimenter * if !argc() | NERDTree | endif
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
@@ -209,3 +218,4 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 hi IndentGuidesOdd ctermbg=0
 hi IndentGuidesEven ctermbg=0
+

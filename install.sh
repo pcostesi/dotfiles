@@ -55,5 +55,4 @@ cd vim/csv.vim/ && make ; cd $CURDIR
 #cp dircolors-solarized/dircolors.ansi-dark ~/.solarized/dircolors/
 
 mkdir -p ~/.tmux.d/
-find ~ -name "powerline.conf" ~/.tmux.d/
 

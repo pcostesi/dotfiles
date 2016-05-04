@@ -7,3 +7,8 @@ Plugin 'git@github.com:tpope/vim-fugitive.git'
 Plugin 'git@github.com:airblade/vim-gitgutter.git'
 Plugin 'git@github.com:nathanaelkane/vim-indent-guides.git'
 Plugin 'git@github.com:chrisbra/csv.vim.git'
+Plugin 'git@github.com:kien/ctrlp.vim.git'
+Plugin 'git@github.com:Valloric/YouCompleteMe.git'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
